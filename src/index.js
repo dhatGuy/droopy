@@ -1,5 +1,5 @@
 import css from "./css/style.scss";
-import 'normalize.css';
+// import 'normalize.css';
 
 const burger = document.querySelector('.burger')
 const navLinks = document.querySelector('.nav-links')

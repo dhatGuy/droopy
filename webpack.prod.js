@@ -11,6 +11,7 @@ const {
 
 module.exports = merge(common, {
     mode: "production",
+    performance: false,
     optimization: {
         minimizer: [
             new OptimizeCssAssetsPlugin(),
