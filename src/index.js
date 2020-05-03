@@ -10,11 +10,6 @@ burger.addEventListener('click', ()=>{
   if (!burger.classList.contains('open')) {
     navLinks.classList.toggle('open')
   }
-  // if (navLinks.style.display == 'none') {
-  //   navLinks.style.display = 'flex'
-  // } else {
-  //   navLinks.style.display = 'none'
-  // }
 
   links.forEach((link,index)=>{
     if(!link.style.animation){
