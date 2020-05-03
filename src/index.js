@@ -1,5 +1,5 @@
 import css from "./css/style.scss";
-// import 'normalize.css';
+import 'normalize.css';
 
 const burger = document.querySelector('.burger')
 const navLinks = document.querySelector('.nav-links')
@@ -9,6 +9,7 @@ let isOpen = false;
 burger.addEventListener('click', ()=>{
   if (!burger.classList.contains('open')) {
     navLinks.classList.toggle('open')
+    burger.classList.toggle('animate')
   }
 
   links.forEach((link,index)=>{
