@@ -4,12 +4,13 @@
   "description": "A reusable Nav bar with a dropdown menu",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
   },
   "author": "Joseph Odunsi",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.7.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
@@ -18,6 +19,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "normalize.css": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.0",
