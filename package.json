@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack-dev-server --config webpack.prod.js"
   },
   "author": "Joseph Odunsi",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "autoprefixer": "^9.7.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
@@ -25,9 +26,12 @@
     "style-loader": "^1.2.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.7.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "imagemin-webpack-plugin": "^2.4.2"
+  }
 }

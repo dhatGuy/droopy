@@ -3,8 +3,7 @@ import 'normalize.css';
 
 const burger = document.querySelector('.burger')
 const navLinks = document.querySelector('.nav-links')
-const links = document.querySelectorAll('.nav-links li')
-let isOpen = false;
+const links = document.querySelectorAll('.nav-links >li')
 
 burger.addEventListener('click', ()=>{
   if (!burger.classList.contains('open')) {
@@ -17,6 +16,15 @@ burger.addEventListener('click', ()=>{
       link.style.animation = `fadeIn .3s ease-in-out forwards ${index / 6}s`
     }else{
       link.style.animation = ''
+    }
+  })
+})
+
+document.querySelectorAll('.nav-links > li').forEach(link=>{
+  link.addEventListener('click', ()=>{
+    Array.from(navLinks.children).forEach(child=>child.classList.remove('active'))
+    if(!link.classList.contains("active")){
+      link.classList.add('active')
     }
   })
 })

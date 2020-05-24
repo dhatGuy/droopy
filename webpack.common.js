@@ -1,11 +1,25 @@
-const path = require('path');
+// plugin to compress images
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+
+// give warning about duplicate packages
+const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin')
+
+// generate HTML file
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
     entry: "./src/index.js",
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'
+        }),
+        new DuplicatePackageCheckerPlugin(),
+        new ImageminPlugin({
+            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            pngquant: {
+                quality: '95-100'
+            }
         })
     ],
     module: {
@@ -37,10 +51,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                  'style-loader',
-                  'css-loader'
+                    'style-loader',
+                    'css-loader'
                 ]
-              }
+            }
         ]
     }
 }
