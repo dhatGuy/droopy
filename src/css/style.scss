@@ -20,11 +20,13 @@
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -57,10 +59,16 @@ nav {
     color: white;
     letter-spacing: 5px;
   }
+
   .nav-links {
     @media screen and(max-width: 1050px) {
       width: 50%;
     }
+
+    li{
+      list-style: none;
+    }
+
     display: flex;
     justify-content: space-around;
     width: 40%;
@@ -86,20 +94,36 @@ nav {
     .item{
       padding: 10px 15px;
       position: relative;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 3px;
+
+      @include for-phone {
+        opacity: 0;
+        padding: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
       &.active{
         background-color: rgba(0, 20, 100, 0.808);
       }
+
       &:hover{
+        background-color: rgba(0, 20, 100, 0.808);
         .dropdown{
           display: block;
         }
       }
+
       .dropdown{
         margin-top: 11px;
         padding-top: 17px;
         z-index: 2;
         left: 0;
-        box-shadow: 0px 8px 16px 0px rgba(18, 42, 136, 0.801);
+        box-shadow: 0 8px 16px 0 rgba(18, 42, 136, 0.801);
         display: none;
         min-width: 120px;
         background-color: rgba(0, 20, 100, 0.808);
@@ -114,6 +138,7 @@ nav {
           padding-top: 10px;
           margin-top: 0;
         }
+
         li{
           padding: 10px;
           &:hover{
@@ -122,6 +147,7 @@ nav {
         }
       }
     }
+
     &.open {
       transform: scale(1, 1);
       -webkit-transform: scale(1, 1);
@@ -130,23 +156,9 @@ nav {
       -o-transform: scale(1, 1);
     }
 
-    li{
-      list-style: none;
-    }
-    .item {
-      color: white;
-      font-weight: bold;
-      letter-spacing: 3px;
-      @include for-phone {
-        opacity: 0;
-        padding: 10px;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-    }
+
   }
+
   .burger {
     display: none;
     justify-content: center;
@@ -158,18 +170,8 @@ nav {
     @include for-phone {
       display: flex;
     }
-    &.animate {
-      .bar {
-        transform: translateX(50px);
-        background: transparent;
-        &::after {
-          transform: translate(-50px, 10px) rotate(405deg);
-        }
-        &::before {
-          transform: translate(-50px, -10px) rotate(-405deg);
-        }
-      }
-    }
+
+
     .bar {
       width: 30px;
       height: 3px;
@@ -177,6 +179,7 @@ nav {
       background-color: white;
       transition: all 0.4s ease;
       position: relative;
+
       &::before,
       &::after {
         content: "";
@@ -187,11 +190,27 @@ nav {
         background-color: white;
         transition: all 0.4s ease-out;
       }
+
       &::before {
         top: 10px;
       }
+
       &::after {
         bottom: 10px;
+      }
+    }
+    &.animate {
+      .bar {
+        transform: translateX(50px);
+        background: transparent;
+
+        &::after {
+          transform: translate(-50px, 10px) rotate(405deg);
+        }
+
+        &::before {
+          transform: translate(-50px, -10px) rotate(-405deg);
+        }
       }
     }
   }
