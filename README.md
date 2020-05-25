@@ -1,0 +1,2 @@
+# droopy
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/129bf0e0d7d74148b90f518a027c2b69)](https://app.codacy.com/manual/dhatGuy/droopy?utm_source=github.com&utm_medium=referral&utm_content=dhatGuy/droopy&utm_campaign=Badge_Grade_Dashboard)
