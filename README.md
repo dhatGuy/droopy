@@ -5,13 +5,13 @@
 Droopy is a reusable navigation bar for websites
 
 ## Prerequisites
-- Verify that you have Node.js installed.
+Verify that you have Node.js installed.
 ```
 node -v
 ```
 If not, refer to [nodejs.org](https://nodejs.org)
 
-- npm command line interface must be installed.
+npm command line interface must be installed.
 To download the latest version of npm, run the following command
 ```
 [sudo] npm install npm -g
