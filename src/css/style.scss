@@ -61,18 +61,18 @@ nav {
   }
 
   .nav-links {
-    @media screen and(max-width: 1050px) {
-      width: 50%;
-    }
-
-    li{
-      list-style: none;
-    }
-
     display: flex;
     justify-content: space-around;
     width: 40%;
     transition: all 0.2s ease;
+
+    @media screen and(max-width: 1050px) {
+      width: 50%;
+    }
+
+    li {
+      list-style: none;
+    }
 
     @include for-phone {
       position: absolute;
@@ -91,7 +91,7 @@ nav {
       -o-transform: scale(0, 1);
     }
 
-    .item{
+    .item {
       padding: 10px 15px;
       position: relative;
       color: white;
@@ -107,41 +107,50 @@ nav {
         text-decoration: none;
         color: inherit;
       }
-      &.active{
+
+      &.active {
         background-color: rgba(0, 20, 100, 0.808);
       }
 
-      &:hover{
+      &:hover {
         background-color: rgba(0, 20, 100, 0.808);
-        .dropdown{
-          display: block;
+
+        .dropdown {
+          opacity: 1;
+          visibility: visible;
+          max-height:500px;
         }
       }
 
-      .dropdown{
+      .dropdown {
         margin-top: 11px;
         padding-top: 17px;
         z-index: 2;
         left: 0;
+        opacity: 0;
+        max-height: 0;
+        visibility: hidden  ;
         box-shadow: 0 8px 16px 0 rgba(18, 42, 136, 0.801);
-        display: none;
         min-width: 120px;
         background-color: rgba(0, 20, 100, 0.808);
         position: absolute;
         font-size: 12px;
+        transition: all .4s ease-in-out;
 
-        @include for-phone{
+        @include for-phone {
           min-width: 140px;
           max-width: 200px;
-          left: -175%;
+          left: -155px;
           top: 0;
           padding-top: 10px;
           margin-top: 0;
         }
 
-        li{
+        li {
           padding: 10px;
-          &:hover{
+          transition: padding 0.3s ease;
+          &:hover {
+            padding: 15px;
             background-color: rgb(18, 42, 136);
           }
         }
@@ -155,8 +164,6 @@ nav {
       -ms-transform: scale(1, 1);
       -o-transform: scale(1, 1);
     }
-
-
   }
 
   .burger {
@@ -167,10 +174,10 @@ nav {
     height: 50px;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+
     @include for-phone {
       display: flex;
     }
-
 
     .bar {
       width: 30px;
