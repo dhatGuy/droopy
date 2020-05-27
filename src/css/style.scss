@@ -118,7 +118,7 @@ nav {
         .dropdown {
           opacity: 1;
           visibility: visible;
-          max-height:500px;
+          max-height: 500px;
         }
       }
 
@@ -129,13 +129,13 @@ nav {
         left: 0;
         opacity: 0;
         max-height: 0;
-        visibility: hidden  ;
+        visibility: hidden;
         box-shadow: 0 8px 16px 0 rgba(18, 42, 136, 0.801);
         min-width: 120px;
         background-color: rgba(0, 20, 100, 0.808);
         position: absolute;
         font-size: 12px;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
 
         @include for-phone {
           min-width: 140px;
@@ -150,8 +150,8 @@ nav {
           padding: 10px;
           transition: padding 0.3s ease;
           &:hover {
-            padding: 15px;
             background-color: rgb(18, 42, 136);
+            padding: 15px;
           }
         }
       }
@@ -206,10 +206,12 @@ nav {
         bottom: 10px;
       }
     }
+
     &.animate {
+
       .bar {
-        transform: translateX(50px);
         background: transparent;
+        transform: translateX(50px);
 
         &::after {
           transform: translate(-50px, 10px) rotate(405deg);
